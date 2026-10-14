@@ -16,7 +16,9 @@
 @media(max-width:560px){.hero-image{object-position:center center}.hero-copy{padding-bottom:42px}.section{padding:58px 0}.section.page::before{inset:12% 0;background-size:auto 58%;opacity:.04}.photo-feature{grid-template-columns:1fr;gap:10px;max-width:430px}.photo-frame img{height:auto;max-height:430px;object-fit:cover}.photo-copy{text-align:center;padding:12px 8px 20px}.photo-feature:nth-of-type(even) .photo-frame{order:0}.countdown div{min-width:48px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}.hero.zooming .hero-image{transform:none}}
 
-/* Falling leaves and golden glitter */
+
+
+/* Visible falling leaves and golden sparkles */
 .ambient-effects {
   position: fixed;
   inset: 0;
@@ -32,8 +34,15 @@
   top: -50px;
   left: var(--left);
   animation: falling var(--duration) linear var(--delay) infinite;
-  opacity: 0.6;
+  opacity: 0.8;
 }
+
+.leaf {
+  color: #71836d;
+  font-size: var(--size);
+  text-shadow: 0 1px 4px #71836d55;
+}
+
 .glitter {
   width: var(--size);
   height: var(--size);
@@ -59,6 +68,7 @@
   }
 }
 
+
 @media (prefers-reduced-motion: reduce) {
   .ambient-effects { display: none; }
 }
@@ -69,6 +79,7 @@
   
 <div class="ambient-effects" aria-hidden="true">
   <span class="ambient-item leaf" style="--left:5%;--size:22px;--duration:13s;--delay:-3s">❧</span>
+    <span class="ambient-item glitter" style="--left:57%;--size:5px;--duration:12s;--delay:-1s"></span>
   <span class="ambient-item leaf" style="--left:18%;--size:17px;--duration:17s;--delay:-9s">🍃</span>
   <span class="ambient-item glitter" style="--left:29%;--size:4px;--duration:10s;--delay:-5s"></span>
   <span class="ambient-item leaf" style="--left:43%;--size:24px;--duration:15s;--delay:-7s">❧</span>
@@ -76,17 +87,8 @@
   <span class="ambient-item leaf" style="--left:68%;--size:19px;--duration:18s;--delay:-11s">🍃</span>
   <span class="ambient-item glitter" style="--left:79%;--size:4px;--duration:11s;--delay:-6s"></span>
   <span class="ambient-item leaf" style="--left:92%;--size:21px;--duration:14s;--delay:-4s">❧</span>
-</div>
-
-<div class="ambient-effects" aria-hidden="true">
-  <span class="ambient-item leaf" style="--left:5%;--size:22px;--duration:13s;--delay:-3s">❧</span>
-  <span class="ambient-item leaf" style="--left:18%;--size:17px;--duration:17s;--delay:-9s">🍃</span>
-  <span class="ambient-item glitter" style="--left:29%;--size:4px;--duration:10s;--delay:-5s"></span>
-  <span class="ambient-item leaf" style="--left:43%;--size:24px;--duration:15s;--delay:-7s">❧</span>
-  <span class="ambient-item glitter" style="--left:57%;--size:5px;--duration:12s;--delay:-2s"></span>
-  <span class="ambient-item leaf" style="--left:68%;--size:19px;--duration:18s;--delay:-11s">🍃</span>
-  <span class="ambient-item glitter" style="--left:79%;--size:4px;--duration:11s;--delay:-6s"></span>
-  <span class="ambient-item leaf" style="--left:92%;--size:21px;--duration:14s;--delay:-4s">❧</span>
+    <span class="ambient-item glitter" style="--left:57%;--size:5px;--duration:12s;--delay:-8s"></span>
+    <span class="ambient-item glitter" style="--left:57%;--size:5px;--duration:12s;--delay:-10s"></span>
 </div>
 
 <section class="hero" id="home" aria-label="Wedding invitation welcome">
