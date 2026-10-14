@@ -20,24 +20,25 @@
 .ambient-effects {
   position: fixed;
   inset: 0;
+  width: 100%;
+  height: 100%;
   pointer-events: none;
   overflow: hidden;
-  z-index: 4;
+  z-index: 20;
 }
 
 .ambient-item {
   position: absolute;
-  top: -40px;
+  top: -50px;
   left: var(--left);
-  opacity: 0;
-  animation: gentle-fall var(--duration) linear var(--delay) infinite;
-  will-change: transform, opacity;
+  animation: falling var(--duration) linear var(--delay) infinite;
+  opacity: 0.8;
 }
 
 .leaf {
   color: #71836d;
   font-size: var(--size);
-  filter: drop-shadow(0 2px 2px #45574315);
+  text-shadow: 0 1px 4px #71836d55;
 }
 
 .glitter {
@@ -45,22 +46,22 @@
   height: var(--size);
   border-radius: 50%;
   background: #c5a65a;
-  box-shadow: 0 0 7px 2px #c5a65a55;
+  box-shadow: 0 0 10px 3px #d9bf7255;
 }
 
-@keyframes gentle-fall {
+@keyframes falling {
   0% {
-    transform: translate3d(0, -5vh, 0) rotate(0deg);
+    transform: translate(0, -5vh) rotate(0deg);
     opacity: 0;
   }
-  12% { opacity: .65; }
+  15% { opacity: 0.9; }
   50% {
-    transform: translate3d(35px, 50vh, 0) rotate(180deg);
-    opacity: .55;
+    transform: translate(45px, 50vh) rotate(180deg);
+    opacity: 0.8;
   }
-  88% { opacity: .45; }
+  85% { opacity: 0.7; }
   100% {
-    transform: translate3d(-25px, 110vh, 0) rotate(360deg);
+    transform: translate(-30px, 110vh) rotate(360deg);
     opacity: 0;
   }
 }
