@@ -162,7 +162,7 @@ enterButton.addEventListener("click",()=>{if(enterButton.dataset.started==="true
           behavior: "smooth",
           block: "start"
         });
-      }, 160),900)});
+      }, 160);
 musicToggle.addEventListener("click",async()=>{if(music.paused){try{await music.play();musicToggle.textContent="♫ Pause music";musicToggle.setAttribute("aria-pressed","true")}catch(error){alert("Add your music file at assets/wedding-music.mp3, then try again.")}}else{music.pause();musicToggle.textContent="♫ Play music";musicToggle.setAttribute("aria-pressed","false")}});
 const rsvp=document.getElementById("rsvpLink");if(WHATSAPP_NUMBER){const message=encodeURIComponent("Hello! I would love to confirm my attendance at the reception.");rsvp.href=`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`}else{rsvp.addEventListener("click",event=>event.preventDefault())}
 function updateCountdown(){const remaining=Math.max(0,new Date(WEDDING_DATE).getTime()-Date.now());const parts={days:Math.floor(remaining/86400000),hours:Math.floor((remaining%86400000)/3600000),minutes:Math.floor((remaining%3600000)/60000),seconds:Math.floor((remaining%60000)/1000)};Object.entries(parts).forEach(([id,value])=>document.getElementById(id).textContent=String(value).padStart(2,"0"))}updateCountdown();window.setInterval(updateCountdown,1000);
